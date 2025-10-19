@@ -21,9 +21,11 @@ embeddings = embedding.embed_documents(documents)
 query_embedding = embedding.embed_query(query)
 
 similarities = cosine_similarity([query_embedding],embeddings)[0]
-print(similarities)
+# print(similarities)
 
 indices = np.argsort(similarities)[::-1]
-print(indices)
+# print(indices)
 
+print(query)
+print("Most similar document, with similarity score: " + str(similarities[indices[0]]))
 print(documents[indices[0]])
